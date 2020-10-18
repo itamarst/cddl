@@ -93,7 +93,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
-    "@types/node": "^12.12.54",
+    "@types/node": "^12.12.61",
     "@typescript-eslint/parser": "^2.34.0",
     "eslint": "^6.4.0",
     "merge-options": "^2.0.0",
@@ -101,7 +101,7 @@
     "rimraf": "^3.0.2",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.7",
-    "vsce": "^1.78.0",
+    "vsce": "^1.79.5",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }

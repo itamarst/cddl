@@ -27,7 +27,7 @@
     "cddl": "file:../pkg"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^6.0.3",
+    "copy-webpack-plugin": "^6.1.0",
     "css-loader": "^1.0.0",
     "hello-wasm-pack": "^0.1.0",
     "minimist": "^1.2.5",
