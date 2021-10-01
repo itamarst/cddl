@@ -2023,11 +2023,11 @@ where
     );
 
     match member_key {
-      Some(MemberKey::NonMemberKey {
+      Some(MemberKey::ParenthesizedType {
         #[cfg(feature = "ast-comments")]
-          non_member_key: NonMemberKey::Type(mut entry_type),
+          non_member_key: ParenthesizedType::Type(mut entry_type),
         #[cfg(not(feature = "ast-comments"))]
-          non_member_key: NonMemberKey::Type(entry_type),
+          non_member_key: ParenthesizedType::Type(entry_type),
         #[cfg(feature = "ast-comments")]
         comments_before_type_or_group,
         #[cfg(feature = "ast-comments")]
@@ -2162,8 +2162,8 @@ where
           span,
         })
       }
-      Some(MemberKey::NonMemberKey {
-        non_member_key: NonMemberKey::Group(group),
+      Some(MemberKey::ParenthesizedType {
+        non_member_key: ParenthesizedType::Group(group),
         #[cfg(feature = "ast-comments")]
         comments_before_type_or_group,
         #[cfg(feature = "ast-comments")]
@@ -2822,8 +2822,8 @@ where
             Err(e) => return Err(e),
           };
 
-          return Ok(Some(MemberKey::NonMemberKey {
-            non_member_key: NonMemberKey::Group(group),
+          return Ok(Some(MemberKey::ParenthesizedType {
+            non_member_key: ParenthesizedType::Group(group),
             #[cfg(feature = "ast-comments")]
             comments_before_type_or_group,
             #[cfg(feature = "ast-comments")]
@@ -2966,8 +2966,8 @@ where
             ),
           })
         } else {
-          Some(MemberKey::NonMemberKey {
-            non_member_key: NonMemberKey::Type(Type {
+          Some(MemberKey::ParenthesizedType {
+            non_member_key: ParenthesizedType::Type(Type {
               type_choices: t.type_choices,
               #[cfg(feature = "ast-span")]
               span: Span(
@@ -3068,8 +3068,8 @@ where
             ),
           })
         } else {
-          Some(MemberKey::NonMemberKey {
-            non_member_key: NonMemberKey::Type(Type {
+          Some(MemberKey::ParenthesizedType {
+            non_member_key: ParenthesizedType::Type(Type {
               type_choices: vec![TypeChoice {
                 #[cfg(feature = "ast-comments")]
                 comments_before_type: None,
